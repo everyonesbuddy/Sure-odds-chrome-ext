@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Sure odds extention",
+  "description": "comprehensive sports betting research tool",
+  "version": "1.0.0",
+  "icons": {
+    "16": "Black_and_White_Modern_Vintage_Badge_Brand_Logo__2_-removebg-preview.png",
+    "48": "Black_and_White_Modern_Vintage_Badge_Brand_Logo__2_-removebg-preview.png",
+    "128": "Black_and_White_Modern_Vintage_Badge_Brand_Logo__2_-removebg-preview.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "sure odds extension",
+    "default_icon": "Black_and_White_Modern_Vintage_Badge_Brand_Logo__2_-removebg-preview.png"
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}

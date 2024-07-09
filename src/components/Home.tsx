@@ -1,5 +1,5 @@
-import React from "react";
-import Box from "@mui/material/Box";
+import React, { useState, useEffect } from "react";
+import { Box, Link } from "@mui/material";
 import Nav from "./Nav";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -13,6 +13,25 @@ interface TabPanelProps {
   value: number;
 }
 
+const affiliates = [
+  {
+    message: "Parlay Play: Get $100 match for your first deposit",
+    color: "#eac100",
+    url: "https://parlayplay.io/account/signup?coupon=joeddomitor",
+  },
+  {
+    message: "Underdog: Get first deposit matched in bonus cash up to $250",
+    color: "#1b1b1b",
+    url: "https://play.underdogfantasy.com/magnusdomitor",
+  },
+  {
+    message: "Prize Picks: First deposit match up to $100!",
+    color: "#8000ff",
+    url: "https://app.prizepicks.com/sign-up?invite_code=PR-SUWVT13",
+  },
+  // Add more affiliates here
+];
+
 const Home = () => {
   const a11yProps = (index: number) => ({
     id: `simple-tab-${index}`,
@@ -24,12 +43,32 @@ const Home = () => {
   };
 
   const [value, setValue] = React.useState(0);
+  const [currentAffiliateIndex, setCurrentAffiliateIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentAffiliateIndex(
+        (prevIndex) => (prevIndex + 1) % affiliates.length
+      );
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
       <Nav />
       <Box sx={{ width: "100%" }}>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Box
+          sx={{
+            borderBottom: 1,
+            borderColor: "divider",
+            zIndex: 1100,
+            position: "sticky",
+            top: 0,
+            backgroundColor: "background.paper",
+          }}
+        >
           <Tabs
             value={value}
             onChange={handleChange}
@@ -65,6 +104,34 @@ const Home = () => {
         <CustomTabPanel value={value} index={1}>
           <PlayerPropResearchPanel />
         </CustomTabPanel>
+      </Box>
+      {/* footer */}
+      <Box
+        sx={{
+          position: "fixed",
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: affiliates[currentAffiliateIndex].color,
+          color: "#F0F0F0",
+          padding: "10px",
+          textAlign: "center",
+          zIndex: 1000,
+        }}
+      >
+        {affiliates[currentAffiliateIndex].message}{" "}
+        <Link
+          href={affiliates[currentAffiliateIndex].url}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            color: "#4FC3F7",
+            textDecoration: "underline",
+            fontWeight: "bold",
+          }}
+        >
+          Claim Now
+        </Link>
       </Box>
     </>
   );

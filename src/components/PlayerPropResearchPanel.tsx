@@ -257,6 +257,7 @@ const PlayerPropResearchPanel = () => {
             boxShadow: "0 4px 20px rgba(0, 0, 0, 0.5)",
             borderRadius: "16px",
             mt: 2,
+            mb: 2,
           }}
         >
           <CircularProgress />
@@ -269,6 +270,7 @@ const PlayerPropResearchPanel = () => {
             boxShadow: "0 4px 20px rgba(0, 0, 0, 0.5)",
             borderRadius: "16px",
             mt: 2,
+            mb: 2,
           }}
         >
           <CardContent>
@@ -289,6 +291,7 @@ const PlayerPropResearchPanel = () => {
             boxShadow: "0 4px 20px rgba(0, 0, 0, 0.5)",
             borderRadius: "16px",
             mt: 2, // Margin top for spacing
+            mb: 2, // Margin bottom for spacing
           }}
         >
           <CardContent>

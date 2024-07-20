@@ -1,0 +1,1 @@
+{"version":3,"file":"contentScript.js","mappings":";;;;;AAAA;AACA;AACA","sources":["webpack://sure-odds-extension/./src/contentScript/contentScript.ts"],"sourcesContent":["chrome.runtime.sendMessage(\"From the Content Script\", (response) => {\r\n  console.log(response);\r\n});\r\n"],"names":[],"sourceRoot":""}

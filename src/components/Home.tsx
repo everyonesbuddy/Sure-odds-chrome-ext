@@ -6,6 +6,9 @@ import Tab from "@mui/material/Tab";
 import CustomTabPanel from "./CustomTabPanel";
 import BestPropsPanel from "./BestPropsPanel";
 import PlayerPropResearchPanel from "./PlayerPropResearchPanel";
+import PostYourPicks from "./PostYourPicks";
+import PicksOfTheDay from "./PicksOfTheDay";
+import Leaderboard from "./Leaderboard";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -80,8 +83,16 @@ const Home = () => {
               },
             }}
           >
-            <Tab
+            {/* <Tab
               label="Best Props"
+              {...a11yProps(0)}
+              sx={{
+                color: "#5E17EB",
+                fontSize: "10px",
+              }}
+            /> */}
+            <Tab
+              label="Leaderboard"
               {...a11yProps(0)}
               sx={{
                 color: "#5E17EB",
@@ -89,8 +100,16 @@ const Home = () => {
               }}
             />
             <Tab
-              label="Player Research"
+              label="Post Your Picks"
               {...a11yProps(1)}
+              sx={{
+                color: "#5E17EB",
+                fontSize: "10px",
+              }}
+            />
+            <Tab
+              label="View Picks"
+              {...a11yProps(2)}
               sx={{
                 color: "#5E17EB",
                 fontSize: "10px",
@@ -98,15 +117,21 @@ const Home = () => {
             />
           </Tabs>
         </Box>
-        <CustomTabPanel value={value} index={0}>
+        {/* <CustomTabPanel value={value} index={0}>
           <BestPropsPanel />
+        </CustomTabPanel> */}
+        <CustomTabPanel value={value} index={0}>
+          <Leaderboard />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          <PlayerPropResearchPanel />
+          <PostYourPicks />
+        </CustomTabPanel>
+        <CustomTabPanel value={value} index={2}>
+          <PicksOfTheDay />
         </CustomTabPanel>
       </Box>
       {/* footer */}
-      <Box
+      {/* <Box
         sx={{
           position: "fixed",
           left: 0,
@@ -132,7 +157,7 @@ const Home = () => {
         >
           Claim Now
         </Link>
-      </Box>
+      </Box> */}
     </>
   );
 };

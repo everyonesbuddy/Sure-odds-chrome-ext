@@ -1,1 +1,12 @@
-chrome.runtime.sendMessage("From the Content Script",(e=>{console.log(e)}));
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!********************************************!*\
+  !*** ./src/contentScript/contentScript.ts ***!
+  \********************************************/
+chrome.runtime.sendMessage("From the Content Script", (response) => {
+  console.log(response);
+});
+
+/******/ })()
+;
+//# sourceMappingURL=contentScript.js.map

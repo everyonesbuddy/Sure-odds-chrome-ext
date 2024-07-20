@@ -1,1 +1,318 @@
-(()=>{"use strict";var e,t,r,a={9022:(e,t,r)=>{r.d(t,{A:()=>s});var a=r(1601),n=r.n(a),o=r(6314),l=r.n(o)()(n());l.push([e.id,"body {\n  width: 400px;\n  height: 400px;\n}\n",""]);const s=l},4419:(e,t,r)=>{var a=r(6540),n=r(9067),o=r(5001),l=r(9828),s=r(8532),c=r(4073);const i=()=>a.createElement(l.A,{position:"static",sx:{backgroundColor:"#5E17EB"}},a.createElement(s.A,null,a.createElement(c.A,{variant:"h6",component:"div",sx:{flexGrow:1}},"Sure Odds")));var d=r(1968),p=r(423);const u=e=>{const{children:t,value:r,index:o}=e,l=function(e,t){var r={};for(var a in e)Object.prototype.hasOwnProperty.call(e,a)&&t.indexOf(a)<0&&(r[a]=e[a]);if(null!=e&&"function"==typeof Object.getOwnPropertySymbols){var n=0;for(a=Object.getOwnPropertySymbols(e);n<a.length;n++)t.indexOf(a[n])<0&&Object.prototype.propertyIsEnumerable.call(e,a[n])&&(r[a[n]]=e[a[n]])}return r}(e,["children","value","index"]);return a.createElement("div",Object.assign({role:"tabpanel",hidden:r!==o,id:`simple-tabpanel-${o}`,"aria-labelledby":`simple-tab-${o}`},l),r===o&&a.createElement(n.A,{sx:{p:3}},a.createElement(c.A,null,t)))};var b=r(8239),m=r(4977),h=r(7636),f=r(7423),x=r(9582);const g=()=>{const[e,t]=(0,a.useState)([]);return(0,a.useEffect)((()=>{fetch("https://sheet.best/api/sheets/ba7d096f-6b2c-499c-9249-b5736dcb8de7").then((e=>e.json())).then((e=>{const r=e.sort((()=>.5-Math.random()));t(r)})).catch((e=>console.error("Error fetching data:",e)))}),[]),a.createElement(a.Fragment,null,a.createElement(b.Ay,{container:!0,spacing:2},e.map(((e,t)=>a.createElement(b.Ay,{item:!0,xs:12,sm:6,md:4,key:t},a.createElement(m.A,{sx:{elevation:12,padding:"16px",boxShadow:"0 4px 20px rgba(0, 0, 0, 0.5)",borderRadius:"16px"}}," ",a.createElement(h.A,null,a.createElement(c.A,{variant:"h5",component:"div",sx:{fontWeight:"bold",marginBottom:"8px"}},e["Player Name"]),a.createElement(c.A,{color:"text.secondary",sx:{marginBottom:"4px"}},e["Player Team"]," - ",e.League),a.createElement(c.A,{sx:{marginBottom:"4px"}},"Market: ",e.Market),a.createElement(c.A,{sx:{marginBottom:"4px"}},"Prop Line: ",e["Prop Line"]),a.createElement(c.A,{sx:{display:"flex",alignItems:"center",marginBottom:"4px"}},"Best Bet: ",e["Best Bet"]," (EV: ",e["Best EV"],")",a.createElement("span",{style:{marginLeft:"8px"}},"Over"===e["Best Bet"]?a.createElement(f.A,{style:{color:"green"}}):a.createElement(x.A,{style:{color:"red"}}))),a.createElement(c.A,{sx:{marginBottom:"4px"}},"Hit Rate Last 5: ",e["Hit Rate Last 5"],"%"),a.createElement(c.A,null,"Odds: Over ",e["Over Odds"],", Under ",e["Under Odds"]))))))))};var y=r(779),v=r(4433),A=r(9435),E=r(8363),P=r(2471),B=r(3357),O=r(6990),k=function(e,t,r,a){return new(r||(r=Promise))((function(n,o){function l(e){try{c(a.next(e))}catch(e){o(e)}}function s(e){try{c(a.throw(e))}catch(e){o(e)}}function c(e){var t;e.done?n(e.value):(t=e.value,t instanceof r?t:new r((function(e){e(t)}))).then(l,s)}c((a=a.apply(e,t||[])).next())}))};const S=()=>{const[e,t]=(0,a.useState)(""),[r,n]=(0,a.useState)([]),[o,l]=(0,a.useState)(""),[s,i]=(0,a.useState)(""),[d,p]=(0,a.useState)(null),[u,b]=(0,a.useState)(!1);return(0,a.useEffect)((()=>{var t;e&&((t=e,k(void 0,void 0,void 0,(function*(){return{WNBA:["Points","Rebounds","Assists","Steals","Blocks"],MLB:["Pitcher Strikeouts","Pitcher Walks","Pitcher Hits Allowed"]}[t]||[]}))).then(n),l(""))}),[e]),a.createElement("div",null,a.createElement(y.A,{fullWidth:!0,sx:{mb:2,".MuiOutlinedInput-root":{borderRadius:"12px",height:"40px",boxShadow:"0px 4px 12px rgba(0,0,0,0.1)"}}},a.createElement(v.A,null,"League"),a.createElement(A.A,{value:e,label:"League",onChange:e=>{t(e.target.value)},sx:{".MuiSelect-select":{py:0}}},a.createElement(E.A,{value:"WNBA"},"WNBA"),a.createElement(E.A,{value:"MLB"},"MLB"))),a.createElement(y.A,{fullWidth:!0,sx:{mb:2,".MuiOutlinedInput-root":{borderRadius:"12px",height:"40px",boxShadow:"0px 4px 12px rgba(0,0,0,0.1)"}}},a.createElement(v.A,null,"Market"),a.createElement(A.A,{value:o,label:"Market",onChange:e=>{l(e.target.value)},disabled:!e,sx:{".MuiSelect-select":{py:0}}},r.map((e=>a.createElement(E.A,{key:e,value:e},e))))),a.createElement(P.A,{fullWidth:!0,label:"Search Player",value:s,onChange:e=>{i(e.target.value)},sx:{".MuiOutlinedInput-root":{borderRadius:"12px",height:"40px",boxShadow:"0px 4px 12px rgba(0,0,0,0.1)"}}}),a.createElement(O.A,{variant:"contained",onClick:()=>k(void 0,void 0,void 0,(function*(){b(!0);let t="";if("WNBA"===e&&"Points"===o&&(t="https://sheet.best/api/sheets/3e2f3059-39e3-4e13-bb45-8f55fb9cd88e"),"WNBA"===e&&"Rebounds"===o&&(t="https://sheet.best/api/sheets/3e2f3059-39e3-4e13-bb45-8f55fb9cd88e/tabs/WNBA_Player_Props_Rebounds"),"WNBA"===e&&"Assists"===o&&(t="https://sheet.best/api/sheets/3e2f3059-39e3-4e13-bb45-8f55fb9cd88e/tabs/WNBA_Player_Props_Assists"),"WNBA"===e&&"Steals"===o&&(t="https://sheet.best/api/sheets/3e2f3059-39e3-4e13-bb45-8f55fb9cd88e/tabs/WNBA_Player_Props_Steals"),"WNBA"===e&&"Blocks"===o&&(t="https://sheet.best/api/sheets/3e2f3059-39e3-4e13-bb45-8f55fb9cd88e/tabs/WNBA_Player_Props_Blocks"),"MLB"===e&&"Pitcher Strikeouts"===o&&(t="https://sheet.best/api/sheets/02466f37-6aab-4994-bb71-008f5c73aff3"),"MLB"===e&&"Pitcher Walks"===o&&(t="https://sheet.best/api/sheets/02466f37-6aab-4994-bb71-008f5c73aff3/tabs/MLB_Player_Props_Model_Walks"),"MLB"===e&&"Pitcher Hits Allowed"===o&&(t="https://sheet.best/api/sheets/02466f37-6aab-4994-bb71-008f5c73aff3/tabs/MLB_Player_Props_Model_Hits"),t){console.log("Fetching player data from:",t);try{const e=yield fetch(t),r=yield e.json();console.log("Player data:",r);const a=r.find((e=>e.player.toLowerCase()===s.toLowerCase()));console.log("Found player data:",a),a?p(a):(console.log("Player not found"),p(null))}catch(e){console.error("Error fetching player data:",e)}finally{b(!1)}}else b(!1)})),sx:{mt:2,borderRadius:"12px",boxShadow:"0px 4px 12px rgba(0,0,0,0.1)",height:"40px",".MuiButton-contained":{backgroundColor:"#1976d2","&:hover":{backgroundColor:"#115293"}}}},"Search"),u?a.createElement(m.A,{sx:{display:"flex",justifyContent:"center",alignItems:"center",height:"200px",elevation:12,padding:"16px",boxShadow:"0 4px 20px rgba(0, 0, 0, 0.5)",borderRadius:"16px",mt:2,mb:2}},a.createElement(B.A,null)):d?a.createElement(m.A,{sx:{elevation:12,padding:"16px",boxShadow:"0 4px 20px rgba(0, 0, 0, 0.5)",borderRadius:"16px",mt:2,mb:2}},a.createElement(h.A,null,a.createElement(c.A,{variant:"h5",component:"div"},d.player),a.createElement(c.A,{sx:{mb:1.5},color:"text.secondary"},o," - ",d.team),function(e){const t=[],r={Points:"points",Rebounds:"rebounds",Assists:"assists",Steals:"steals",Blocks:"blocks","Pitcher Strikeouts":"pitcherStrikeouts","Pitcher Hits Allowed":"pitcherHitsAllowed","Pitcher Walks":"pitcherWalks"}[o]||"";for(let n=1;n<=5;n++){let o="";switch(n){case 1:o="LastGame";break;case 2:o="TwoGamesAgo";break;case 3:o="ThreeGamesAgo";break;case 4:o="FourGamesAgo";break;case 5:o="FiveGamesAgo"}const l=`${r}${o}`;e.hasOwnProperty(l)&&t.push(a.createElement(c.A,{variant:"body2",key:l},n," Game(s) Ago: ",e[l]))}return t}(d))):a.createElement(m.A,{sx:{elevation:12,padding:"16px",boxShadow:"0 4px 20px rgba(0, 0, 0, 0.5)",borderRadius:"16px",mt:2,mb:2}},a.createElement(h.A,null,a.createElement(c.A,{variant:"h6",component:"div"},"No player data found."),a.createElement(c.A,{sx:{mt:1},color:"text.secondary"},"Please try searching for a different player."))))},_=[{message:"Parlay Play: Get $100 match for your first deposit",color:"#eac100",url:"https://parlayplay.io/account/signup?coupon=joeddomitor"},{message:"Underdog: Get first deposit matched in bonus cash up to $250",color:"#1b1b1b",url:"https://play.underdogfantasy.com/magnusdomitor"},{message:"Prize Picks: First deposit match up to $100!",color:"#8000ff",url:"https://app.prizepicks.com/sign-up?invite_code=PR-SUWVT13"}],w=()=>{const e=e=>({id:`simple-tab-${e}`,"aria-controls":`simple-tabpanel-${e}`}),[t,r]=a.useState(0),[l,s]=(0,a.useState)(0);return(0,a.useEffect)((()=>{const e=setInterval((()=>{s((e=>(e+1)%_.length))}),3e3);return()=>clearInterval(e)}),[]),a.createElement(a.Fragment,null,a.createElement(i,null),a.createElement(n.A,{sx:{width:"100%"}},a.createElement(n.A,{sx:{borderBottom:1,borderColor:"divider",zIndex:1100,position:"sticky",top:0,backgroundColor:"background.paper"}},a.createElement(d.A,{value:t,onChange:(e,t)=>{r(t)},"aria-label":"basic tabs example",centered:!0,sx:{"& .MuiTabs-indicator":{backgroundColor:"#5E17EB"}}},a.createElement(p.A,Object.assign({label:"Best Props"},e(0),{sx:{color:"#5E17EB",fontSize:"10px"}})),a.createElement(p.A,Object.assign({label:"Player Research"},e(1),{sx:{color:"#5E17EB",fontSize:"10px"}})))),a.createElement(u,{value:t,index:0},a.createElement(g,null)),a.createElement(u,{value:t,index:1},a.createElement(S,null))),a.createElement(n.A,{sx:{position:"fixed",left:0,right:0,bottom:0,backgroundColor:_[l].color,color:"#F0F0F0",padding:"10px",textAlign:"center",zIndex:1e3}},_[l].message," ",a.createElement(o.A,{href:_[l].url,target:"_blank",rel:"noopener noreferrer",style:{color:"#4FC3F7",textDecoration:"underline",fontWeight:"bold"}},"Claim Now")))};var M=r(5338),j=r(5072),W=r.n(j),C=r(7825),L=r.n(C),N=r(7659),R=r.n(N),F=r(5056),I=r.n(F),G=r(540),T=r.n(G),$=r(1113),H=r.n($),z=r(9022),U={};U.styleTagTransform=H(),U.setAttributes=I(),U.insert=R().bind(null,"head"),U.domAPI=L(),U.insertStyleElement=T(),W()(z.A,U),z.A&&z.A.locals&&z.A.locals;const V=document.createElement("div");document.body.appendChild(V),(0,M.H)(V).render(a.createElement((function(){return a.createElement(a.Fragment,null,a.createElement(w,null))}),null))}},n={};function o(e){var t=n[e];if(void 0!==t)return t.exports;var r=n[e]={id:e,exports:{}};return a[e](r,r.exports,o),r.exports}o.m=a,e=[],o.O=(t,r,a,n)=>{if(!r){var l=1/0;for(d=0;d<e.length;d++){r=e[d][0],a=e[d][1],n=e[d][2];for(var s=!0,c=0;c<r.length;c++)(!1&n||l>=n)&&Object.keys(o.O).every((e=>o.O[e](r[c])))?r.splice(c--,1):(s=!1,n<l&&(l=n));if(s){e.splice(d--,1);var i=a();void 0!==i&&(t=i)}}return t}n=n||0;for(var d=e.length;d>0&&e[d-1][2]>n;d--)e[d]=e[d-1];e[d]=[r,a,n]},o.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return o.d(t,{a:t}),t},r=Object.getPrototypeOf?e=>Object.getPrototypeOf(e):e=>e.__proto__,o.t=function(e,a){if(1&a&&(e=this(e)),8&a)return e;if("object"==typeof e&&e){if(4&a&&e.__esModule)return e;if(16&a&&"function"==typeof e.then)return e}var n=Object.create(null);o.r(n);var l={};t=t||[null,r({}),r([]),r(r)];for(var s=2&a&&e;"object"==typeof s&&!~t.indexOf(s);s=r(s))Object.getOwnPropertyNames(s).forEach((t=>l[t]=()=>e[t]));return l.default=()=>e,o.d(n,l),n},o.d=(e,t)=>{for(var r in t)o.o(t,r)&&!o.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},o.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),o.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},(()=>{var e={887:0};o.O.j=t=>0===e[t];var t=(t,r)=>{var a,n,l=r[0],s=r[1],c=r[2],i=0;if(l.some((t=>0!==e[t]))){for(a in s)o.o(s,a)&&(o.m[a]=s[a]);if(c)var d=c(o)}for(t&&t(r);i<l.length;i++)n=l[i],o.o(e,n)&&e[n]&&e[n][0](),e[n]=0;return o.O(d)},r=self.webpackChunksure_odds_extension=self.webpackChunksure_odds_extension||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),o.nc=void 0;var l=o.O(void 0,[994],(()=>o(4419)));l=o.O(l)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/popup/popup.css":
+/*!*******************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/popup/popup.css ***!
+  \*******************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `body {
+  width: 400px;
+  height: 400px;
+}
+`, "",{"version":3,"sources":["webpack://./src/popup/popup.css"],"names":[],"mappings":"AAAA;EACE,YAAY;EACZ,aAAa;AACf","sourcesContent":["body {\r\n  width: 400px;\r\n  height: 400px;\r\n}\r\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./src/popup/popup.css":
+/*!*****************************!*\
+  !*** ./src/popup/popup.css ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_popup_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!./popup.css */ "./node_modules/css-loader/dist/cjs.js!./src/popup/popup.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_popup_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_popup_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_popup_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_popup_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./src/popup/popup.tsx":
+/*!*****************************!*\
+  !*** ./src/popup/popup.tsx ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Home */ "./src/components/Home.tsx");
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _popup_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./popup.css */ "./src/popup/popup.css");
+// render has been depricated
+// import React from "react";
+// import Home from "../components/Home";
+// import ReactDOM from "react-dom";
+// function App() {
+//   return <Home />;
+// }
+// const root = document.createElement("div");
+// document.body.appendChild(root);
+// // @ts-ignore
+// const rootElement = ReactDOM.createRoot(root);
+// rootElement.render(<App />);
+// export default App;
+
+
+
+
+function App() {
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Home__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+}
+const root = document.createElement("div");
+document.body.appendChild(root);
+const rootElement = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_2__.createRoot)(root);
+rootElement.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(App, null));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var chunkIds = deferred[i][0];
+/******/ 				var fn = deferred[i][1];
+/******/ 				var priority = deferred[i][2];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"popup": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var chunkIds = data[0];
+/******/ 			var moreModules = data[1];
+/******/ 			var runtime = data[2];
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunksure_odds_extension"] = self["webpackChunksure_odds_extension"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_mui_icons-material_HelpOutline_js-node_modules_mui_material_AppBar_AppBa-ffd53c","node_modules_moment_locale_sync_recursive_-src_components_Home_tsx"], () => (__webpack_require__("./src/popup/popup.tsx")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=popup.js.map

@@ -79,7 +79,7 @@ const Home = () => {
             centered
             sx={{
               "& .MuiTabs-indicator": {
-                backgroundColor: "#5E17EB",
+                backgroundColor: "#4F46E5",
               },
             }}
           >
@@ -92,26 +92,26 @@ const Home = () => {
               }}
             /> */}
             <Tab
-              label="Leaderboard"
+              label="Leaderboard 🏆"
               {...a11yProps(0)}
               sx={{
-                color: "#5E17EB",
+                color: "#4F46E5",
                 fontSize: "10px",
               }}
             />
             <Tab
-              label="Post Your Picks"
+              label="Post Your Picks ✏️"
               {...a11yProps(1)}
               sx={{
-                color: "#5E17EB",
+                color: "#4F46E5",
                 fontSize: "10px",
               }}
             />
             <Tab
-              label="View Picks"
+              label="Live Picks ⚡"
               {...a11yProps(2)}
               sx={{
-                color: "#5E17EB",
+                color: "#4F46E5",
                 fontSize: "10px",
               }}
             />

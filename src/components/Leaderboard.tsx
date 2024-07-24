@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, Typography, Button, Box } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Button,
+  Box,
+  Avatar,
+} from "@mui/material";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import axios from "axios";
 import moment from "moment";
+import XIcon from "@mui/icons-material/x";
 
 const Leaderboard = () => {
   const [betsData, setBetsData] = useState([]);
@@ -28,7 +36,7 @@ const Leaderboard = () => {
       const postedTime = moment(bet.postedTime);
       switch (filter) {
         case "day":
-          return now.diff(postedTime, "days") < 1;
+          return now.diff(postedTime, "days") < 3;
         case "week":
           return now.diff(postedTime, "weeks") < 1;
         case "month":
@@ -109,64 +117,67 @@ const Leaderboard = () => {
       sx={{ borderRadius: "16px", boxShadow: 3, m: 2 }}
       key={handicapper.username}
     >
-      {/* <CardContent>
-        <Typography variant="h5">
-          {index + 1}.{" "}
-          <a
-            href={`https://x.com/${handicapper.username}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {handicapper.username}
-          </a>
-        </Typography>
-        <Tooltip title="Total amount of odds for bets that were won">
-          <Typography>Total Won Odds: {handicapper.totalWonOdds}</Typography>
-        </Tooltip>
-
-        <Tooltip title="Percentage of bets won out of total bets made">
-          <Typography>
-            Total Won Percentage: ({handicapper.numberOfBetsWon} /
-            {handicapper.numberOfBets}) {handicapper.winRatio.toFixed(2)}%
-          </Typography>
-        </Tooltip>
-
-        <Tooltip title="Potential earnings based on a $100 bet for each winning bet, adjusted for the odds">
-          <Typography>
-            Potential Wins: ${handicapper.potentialWins.toFixed(2)}
-          </Typography>
-        </Tooltip>
-      </CardContent> */}
       <CardContent>
-        <Typography variant="h5">
+        <Typography
+          variant="h5"
+          sx={{ paddingBottom: "20px", display: "flex", alignItems: "center" }}
+        >
           {index + 1}.{" "}
+          <Avatar
+            src={`https://avatar.iran.liara.run/username?username=${handicapper.username}`}
+            alt={"Avatar"}
+            sx={{
+              width: 24,
+              height: 24,
+              display: "inline-flex",
+              verticalAlign: "middle",
+              marginRight: 1,
+            }}
+          />
           <a
             href={`https://x.com/${handicapper.username}`}
             target="_blank"
             rel="noopener noreferrer"
+            style={{ fontSize: "20px" }}
           >
             {handicapper.username}
           </a>
+          <XIcon
+            style={{
+              width: "15px",
+              height: "15px",
+              marginLeft: "8px",
+            }}
+          />
         </Typography>
-        <Typography>
-          Total Won Odds: {handicapper.totalWonOdds}
+        <Typography sx={{ paddingLeft: "25px" }}>
+          • <strong>Total Won Odds:</strong>{" "}
+          <span style={{ fontSize: "0.875em" }}>
+            {handicapper.totalWonOdds}
+          </span>
           <Tooltip title="Total amount of odds for bets that were won">
             <IconButton size="small">
               <HelpOutlineIcon fontSize="small" />
             </IconButton>
           </Tooltip>
         </Typography>
-        <Typography>
-          Total Won %: ({handicapper.numberOfBetsWon} /
-          {handicapper.numberOfBets}) {handicapper.winRatio.toFixed(2)}%
+        <Typography sx={{ paddingLeft: "25px" }}>
+          • <strong>Total Won %:</strong>{" "}
+          <span style={{ fontSize: "0.875em" }}>
+            ({handicapper.numberOfBetsWon} / {handicapper.numberOfBets}){" "}
+            {handicapper.winRatio.toFixed(2)}%
+          </span>
           <Tooltip title="Percentage of bets won out of total bets made">
             <IconButton size="small">
               <HelpOutlineIcon fontSize="small" />
             </IconButton>
           </Tooltip>
         </Typography>
-        <Typography>
-          Potential Wins: ${handicapper.potentialWins.toFixed(2)}
+        <Typography sx={{ paddingLeft: "25px" }}>
+          • <strong>Potential Wins:</strong>{" "}
+          <span style={{ fontSize: "0.875em" }}>
+            ${handicapper.potentialWins.toFixed(2)}
+          </span>
           <Tooltip title="Potential earnings based on a $100 bet for each winning bet, adjusted for the odds">
             <IconButton size="small">
               <HelpOutlineIcon fontSize="small" />

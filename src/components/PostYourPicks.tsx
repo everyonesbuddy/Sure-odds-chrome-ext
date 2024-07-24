@@ -80,6 +80,8 @@ const PostYourPicks = () => {
   const [market, setMarket] = useState("");
   const [players, setPlayers] = useState([]);
   const [playerPicked, setPlayerPicked] = useState("");
+  const [playerPickedDetailForView, setPlayerPickedDetailForView] =
+    useState("");
   const [propLine, setPropLine] = useState("");
   const [propOverOrUnder, setPropOverOrUnder] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -135,6 +137,7 @@ const PostYourPicks = () => {
           if (outcomes) {
             setPlayers(outcomes);
           }
+          setGameDetails(response.data);
         } catch (error) {
           console.error("Error fetching market details:", error);
         }
@@ -157,6 +160,7 @@ const PostYourPicks = () => {
     setMarket("");
     setPlayers([]);
     setPlayerPicked("");
+    setPlayerPickedDetailForView("");
   };
 
   const handleSubmit = async () => {
@@ -173,6 +177,7 @@ const PostYourPicks = () => {
       propOverOrUnder,
       market,
       playerPicked,
+      gameDetails,
     });
 
     const data = {
@@ -210,8 +215,8 @@ const PostYourPicks = () => {
   return (
     <>
       <Typography align="center" gutterBottom>
-        Showcase Your Expertise: Post Your Top Picks Now and Climb the
-        Leaderboard!
+        🌟 Showcase Your Expertise: Post Your Top Picks Now and Climb the
+        Leaderboard 📈, Earn Money 💰, and Get Promotion! 🚀
       </Typography>
       <Card
         sx={{
@@ -264,10 +269,10 @@ const PostYourPicks = () => {
               label="League"
               onChange={(e) => setLeague(e.target.value)}
             >
-              <MenuItem value="basketball_wnba">WNBA</MenuItem>
-              <MenuItem value="basketball_nba">NBA</MenuItem>
-              <MenuItem value="baseball_mlb">MLB</MenuItem>
-              <MenuItem value="americanfootball_nfl">NFL</MenuItem>
+              <MenuItem value="basketball_wnba">WNBA 🏀</MenuItem>
+              <MenuItem value="basketball_nba">NBA 🏀</MenuItem>
+              <MenuItem value="baseball_mlb">MLB ⚾</MenuItem>
+              <MenuItem value="americanfootball_nfl">NFL 🏈</MenuItem>
             </Select>
           </FormControl>
 
@@ -282,8 +287,8 @@ const PostYourPicks = () => {
                   label="Pick Type"
                   onChange={(e) => setPickType(e.target.value)}
                 >
-                  <MenuItem value="props">Props</MenuItem>
-                  <MenuItem value="money line">Money Line</MenuItem>
+                  <MenuItem value="props">Props 🎲</MenuItem>
+                  <MenuItem value="money line">Money Line 💰</MenuItem>
                 </Select>
               </FormControl>
 
@@ -396,17 +401,24 @@ const PostYourPicks = () => {
                       <Select
                         labelId="player-picked-label"
                         id="player-picked-select"
-                        value={playerPicked}
+                        value={playerPickedDetailForView}
                         label="Player Picked"
                         onChange={(e) => {
-                          const [player, name] = e.target.value.split("|"); // Split the value to get both parts
-                          const playerDetails = e.target.value;
+                          const [player, name, point] =
+                            e.target.value.split("|"); // Split the value to get both parts
+                          const playerDetailsForView = e.target.value;
                           const outcome = players.find(
                             (outcome) =>
                               outcome.description === player &&
-                              outcome.name === name
+                              outcome.name === name &&
+                              outcome.point === Number(point)
                           );
-                          setPlayerPicked(playerDetails);
+                          // console.log("outcome", outcome);
+                          // console.log("outcome point", typeof outcome.point);
+                          // console.log("point", typeof point);
+                          // console.log("e.target.value", e.target.value);
+                          setPlayerPicked(player);
+                          setPlayerPickedDetailForView(playerDetailsForView);
                           setOdds(outcome.price);
                           setPropLine(outcome.point);
                           setPropOverOrUnder(outcome.name);
@@ -414,8 +426,10 @@ const PostYourPicks = () => {
                       >
                         {players.map((outcome) => (
                           <MenuItem
-                            key={outcome.description + outcome.name} // Adjusted key to be unique for Over/Under
-                            value={`${outcome.description}|${outcome.name}`} // Combine description and name
+                            key={
+                              outcome.description + outcome.name + outcome.point
+                            } // Adjusted key to be unique for Over/Under
+                            value={`${outcome.description}|${outcome.name}|${outcome.point}`} // Combine description and name
                           >
                             {outcome.description} ({outcome.name}{" "}
                             {outcome.point} ({outcome.price}))
